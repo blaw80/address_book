@@ -13,6 +13,8 @@ var entryPrototype = {
 }
 
 function handleSubmit(e){   
+   if (document.querySelectorAll('input')[0].value == "") { alert("name field cannot be left blank");}
+  else{
   var inputs = [].slice.apply(document.querySelectorAll('.addressForm input'));
   var entry = Object.create(entryPrototype);
     
@@ -24,6 +26,7 @@ function handleSubmit(e){
   entry.printAddress();
 
   e.preventDefault();
+  }
 } 
 
 document.querySelector('.addressForm').addEventListener('submit', handleSubmit);
