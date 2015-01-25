@@ -1,33 +1,37 @@
 //Adress book javascript project
 
 var addressBook = [];
+
 var entryPrototype = {
-	//This is a getter that dynamically generates the label
 	get mailingLabel(){
-		return this.firstName + " " + this.lastName + "\n" + this.street + "\n" + this.city + ", " + this.state + " " + this.zip; 
-	},
-  
+		return this.firstName + " " + this.lastName + "<br/>" + this.street + "<br/>" + this.city + ", " + this.state + " " + this.zip + "<br/>" + this.email + "<br/>" + this.phone; 
+	}, 
     printAddress: function(){
-		console.log(this.mailingLabel);
+		return this.mailingLabel;
   	} 
 }
 
-function handleSubmit(e){   
-   if (document.querySelectorAll('input')[0].value == "") { alert("name field cannot be left blank");}
-  else{
+function handleSubmit(e){     
   var inputs = [].slice.apply(document.querySelectorAll('.addressForm input'));
-  var entry = Object.create(entryPrototype);
-    
+  var entry = Object.create(entryPrototype);  
   inputs.forEach(function(input){
 		entry[input.name] = input.value;
 	});
-
   addressBook.push(entry);
-  entry.printAddress();
-
-  e.preventDefault();
+    document.querySelector(".output").innerHTML = "<h4>Added:</h4>" + entry.printAddress();
+    
+    localStorage.setItem((entry.firstName + " " + entry.lastName).toLowerCase(), JSON.stringify(entry));
+  
+    e.preventDefault();  
   }
-} 
-
 document.querySelector('.addressForm').addEventListener('submit', handleSubmit);
 
+function handleRetrieve(e){ 
+   var localKey = (document.getElementById("first").value + " " + document.getElementById("last").value).toLowerCase(); 
+   var retrieved = JSON.parse(localStorage.getItem(localKey));
+
+   document.querySelector(".output").innerHTML = "<h4>Retrieved:</h4>" + retrieved.firstName + " " + retrieved.lastName + "<br/>" + retrieved.street + "<br/>" + retrieved.city + ", " + retrieved.state + " " + retrieved.zip + "<br/>" + retrieved.email + "<br/>" + retrieved.phone; 
+   e.preventDefault();  
+}
+
+document.querySelector(".retrieveEntry").addEventListener('submit', handleRetrieve)
