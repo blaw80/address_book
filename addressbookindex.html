@@ -4,36 +4,45 @@
 <head>
         <meta charset="utf-8">
         <title>address book</title>  
-        
+  <link rel="stylesheet" href="style.css">
 <style></style>  
 </head>
 
 <body>
   <h1>Adress Book</h1>
-    <div>
-         
+    <div class="input-box">
+      <h4>Add new entry:</h4>
      <form class="addressForm">
-  First Name:<br>
-    <input type="text" name="firstName">
-  <br>Last Name:<br>
+       First Name:<br/>
+    <input required type="text" name="firstName">
+       <br/>Last Name:<br/>
     <input type="text" name="lastName">
-  <br>Phone:<br>
+       <br/>Phone:<br/>
     <input type="text" name="phone">
-  <br>Email:<br>
+       <br/>Email:<br/>
     <input type="text" name="email">
-  <br>Street Adress:<br>
+       <br/>Street Adress:<br/>
     <input type="text" name="street">
-  <br>City:<br>
+       <br/>City:<br/>
     <input type="text" name="city">
-  <br>State:<br>
+       <br/>State:<br/>
     <input type="text" name="state">
-  <br>Zip code<br>
+       <br/>Zip code<br/>
     <input type="text" name="zip">
-  <br><button>Submit</button>
-</form>  
-  
+  <br><button class="entry">submit</button>
+</form>    
     </div>
-
+<div class="output">
+ </div>
+  <div class="retrieve">
+    <h4>Retrieve entry:<h4>
+      <form class="retrieveEntry">
+       First Name:<br/>
+    <input required type="text" name="firstName" id="first">
+       <br/>Last Name:<br/>
+    <input type="text" name="lastName" id="last">
+        <button class="entry">search</button>
+    <div>
 <script src="script.js"></script>
 
 </body>
