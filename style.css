@@ -1,0 +1,56 @@
+
+
+body {
+  background-color: lightblue;
+  
+    }
+
+h1 {
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+h4 {
+  margin: 10px;
+}
+
+.input-box {
+  background-color: antiquewhite;
+  border: 2px solid black;
+  float: left;
+  padding: 5px 20px 20px 20px;
+  margin-left: 15px;
+  
+}
+
+
+.output {
+border: 2px solid black;  
+width: 250px;
+height: 190px;
+background-color: aliceblue;
+padding: 18px;
+margin-top: 20px;
+margin-left: 260px;
+  position: relative;
+  
+}
+
+.retrieve {
+border: 2px solid black;  
+width: 250px;
+height: 150px;
+background-color: yellowgreen;
+padding: 18px;
+margin-top: 15px;
+margin-left: 260px;
+  position: relative;
+}
+.entry{
+ margin-top: 10px; 
+}
+
+.savelocal{
+  position: relative;
+  top: 412px;
+}
